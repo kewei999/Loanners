@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Loanners</string>
+    <string name="sign_in">Sign In</string>
+    <string name="user_name">Username</string>
+    <string name="Password">Password</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="not_yet_register">Not yet Registered? </string>
+    <string name="sign_up">Sign Up</string>
+    <string name="register">Register</string>
+    <string name="email">Email</string>
+    <string name="confirmPassword">Confirm Password</string>
+    <string-array name="user">
+        <item>Student</item>
+        <item>Guardian</item>
+    </string-array>
+
+</resources>
