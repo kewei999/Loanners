@@ -9,6 +9,24 @@
     <string name="register">Register</string>
     <string name="email">Email</string>
     <string name="confirmPassword">Confirm Password</string>
+    <string name="personalDetails">Personal Details</string>
+    <string name="full_name">Full Name</string>
+    <string name="ic_number">IC No.</string>
+    <string name="ic_number_hint">IC Number</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="phone_no">Phone No.</string>
+    <string name="phone_no_hint">Phone Number</string>
+    <string name="street_1">Street Address Line 1</string>
+    <string name="street_2">Street Address Line 2</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="postal_code">Postal / Zip Code</string>
+    <string name="address">Address</string>
+    <string name="education">University / College</string>
+    <string name="education_hint">Name of University / College</string>
+    <string name="done">Done</string>
     <string-array name="user">
         <item>Student</item>
         <item>Guardian</item>

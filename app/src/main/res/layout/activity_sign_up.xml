@@ -188,9 +188,9 @@
         android:layout_marginRight="8dp"
         android:backgroundTint="#EEEEEE"
         android:entries="@array/user"
-        android:textColor="@color/colorfillSignIn"
-        android:textSize="10dp"
         android:padding="5dp"
+        android:textColor="@color/colorfillSignIn"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageViewType"
         app:layout_constraintTop_toBottomOf="@+id/editTextconfirmPassword" />
