@@ -20,7 +20,7 @@
         android:textColor="@color/text"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText8" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPost" />
 
     <EditText
         android:id="@+id/editTextStreet2"
@@ -161,7 +161,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/radioGender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -205,7 +205,7 @@
         android:textColorHint="@color/colorfillSignIn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textViewPhoneNumber"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/radioGender"
         android:importantForAutofill="no" />
 
     <EditText
@@ -261,7 +261,7 @@
         android:importantForAutofill="no" />
 
     <EditText
-        android:id="@+id/editText8"
+        android:id="@+id/editTextPost"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -279,7 +279,7 @@
         android:importantForAutofill="no" />
 
     <AutoCompleteTextView
-        android:id="@+id/autoCompleteTextView"
+        android:id="@+id/autoEducation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -291,10 +291,10 @@
         android:textColorHint="@color/colorfillSignIn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textViewAddress2"
-        app:layout_constraintTop_toBottomOf="@+id/editText8" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPost" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonDone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
