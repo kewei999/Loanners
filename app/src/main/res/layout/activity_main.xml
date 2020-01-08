@@ -38,7 +38,8 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/loanner" />
+        app:srcCompat="@drawable/loanner"
+        android:contentDescription="TODO"/>
 
     <ImageView
         android:id="@+id/imageViewUser"
@@ -64,9 +65,10 @@
         android:ems="10"
         android:hint="@string/user_name"
         android:inputType="textPersonName"
-        android:textColor="@color/colorfillSignIn"
+        android:textColor="@android:color/primary_text_dark"
         android:textColorHint="@color/colorfillSignIn"
         android:textSize="20sp"
+        android:text="Sam9913"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.216"
         app:layout_constraintStart_toEndOf="@+id/imageViewUser"
@@ -81,7 +83,8 @@
         android:layout_marginTop="23dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewUser"
-        app:srcCompat="@drawable/ic_vpn_key_black_48dp" />
+        app:srcCompat="@drawable/ic_vpn_key_black_48dp"
+        android:contentDescription="TODO"/>
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -95,8 +98,9 @@
         android:backgroundTint="#EEEEEE"
         android:ems="10"
         android:hint="@string/Password"
+        android:text="123456"
         android:inputType="textPersonName"
-        android:textColor="@color/colorfillSignIn"
+        android:textColor="@android:color/primary_text_dark"
         android:textColorHint="@color/colorfillSignIn"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -184,16 +188,19 @@
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/button_round"
         android:text="@string/sign_up"
         android:textColor="@color/signIn_button"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewNotYetRegister" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewNotYetRegister"
+        app:layout_constraintVertical_bias="1.0"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

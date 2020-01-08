@@ -10,11 +10,11 @@ class MySingleton constructor(context: Context) {
         @Volatile
         private var INSTANCE: MySingleton? = null
         fun getInstance(context: Context) =
-                INSTANCE ?: synchronized(this) {
-                    INSTANCE ?: MySingleton(context).also {
-                        INSTANCE = it
-                    }
+            INSTANCE ?: synchronized(this) {
+                INSTANCE ?: MySingleton(context).also {
+                    INSTANCE = it
                 }
+            }
     }
     private val requestQueue: RequestQueue by lazy {
         // applicationContext is key, it keeps you from leaking the

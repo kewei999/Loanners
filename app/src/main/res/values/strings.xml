@@ -32,16 +32,45 @@
         <item>Guardian</item>
     </string-array>
     <string name="url_server">https://noideamobile.000webhostapp.com/api/</string>
-    <string name="url_user_search">user/search.php</string>
-    <string name="url_user_update">user/update.php</string>
-    <string name="url_user_delete">user/delete.php</string>
-    <string name="url_user_read_one">user/read_one.php</string>
-    <string name="url_user_read_by_email">user/read_by_email.php</string>
-    <string name="url_user_read">user/read.php</string>
-    <string name="url_user_create">user/create.php</string>
+    <string name="url_user_search">student/search.php</string>
+    <string name="url_user_update">student/update.php</string>
+    <string name="url_user_delete">student/delete.php</string>
+    <string name="url_user_read_one">student/read_one.php</string>
+    <string name="url_user_read_by_email">student/read_by_email.php</string>
+    <string name="url_user_read">student/read.php</string>
+    <string name="url_user_create">student/create.php</string>
+    <string name="url_loaner_read">loan/read.php</string>
+    <string name="url_loaner_read_latest">loan/read_latest.php</string>
+    <string name="url_loaner_read_most">loan/read_most.php</string>
+
     <string name="home">Home</string>
     <string name="title_activity_real_home">RealHomeActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="studnet_loan">Student Loan</string>
+    <string name="Profile">Profile</string>
+    <string name="List">List</string>
+    <string name="Status">Status</string>
+    <string name="loanAmount">Loan Amount</string>
+    <string name="loan_interest">Loan Interest</string>
+    <string name="term_loan">Term Loan</string>
+    <string name="loan_taken">Loan Taken On</string>
+    <string name="loan">loan</string>
+    <string name="list">list</string>
+    <string name="myBankAccount">My Bank Account</string>
+    <string name="schoolAndProgramme"><![CDATA[School & Programme]]></string>
+    <string name="bookmark">Bookmarks</string>
+    <string name="manageAccount">Manage Account</string>
+    <string name="myStudent">My Student</string>
+    <string name="title_activity_student_list">StudentList</string>
+    <string name="bankAcc">My Bank Account</string>
+    <string name="detail">Details</string>
+    <string name="applyNow">Apply Now</string>
+    <string name="changePassword">Change Password</string>
+    <string name="verify">Account Verification</string>
+
+    <string name="enterpass">Enter Current Password</string>
+    <string name="enternewpass">Enter New Password</string>
+    <string name="defaultLoan">-</string>
 </resources>

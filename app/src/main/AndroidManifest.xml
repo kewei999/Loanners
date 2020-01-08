@@ -12,9 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".OrganisationDetailActivity" />
+
         <activity android:name=".HomeActivity" />
         <activity android:name=".DetailsActivity" />
-        <activity android:name=".LoannerActivity" />
         <activity
             android:name=".SignUpActivity"
             android:label="sign_up"

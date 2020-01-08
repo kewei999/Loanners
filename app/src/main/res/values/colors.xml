@@ -7,4 +7,6 @@
     <color name="colorfillSignIn">#908983</color>
     <color name="text">#71C9CE</color>
     <color name="signIn_button">#3493E0</color>
+    <color name="colorBackgroundProfileD">#393E46</color>
+    <color name="colourBackgroundProfileW">#EEEEEE</color>
 </resources>
