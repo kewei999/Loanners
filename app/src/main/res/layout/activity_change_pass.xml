@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colourBackgroundProfileW"
+    android:id="@+id/frameChgPass">
+
+    <FrameLayout
+        android:id="@+id/viewChgPass"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/colorBackgroundProfileD">
+
+    </FrameLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/buttonBack"
+                android:layout_width="46dp"
+                android:layout_height="51dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/colorBackgroundProfileD"
+                android:drawableBottom="@drawable/ic_keyboard_arrow_left_green_48dp"
+                app:layout_constraintEnd_toStartOf="@+id/textViewChgPass"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewChgPass"
+                android:layout_width="306dp"
+                android:layout_height="54dp"
+                android:layout_marginLeft="15dp"
+                android:text="@string/changePassword"
+                android:textColor="@color/colorsignIn"
+                android:textSize="36sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="80dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.49"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="493dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="70dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/corner_radius">
+
+                    <EditText
+                        android:id="@+id/editTextEnterPass"
+                        android:layout_width="318dp"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="24dp"
+                        android:autofillHints=""
+                        android:backgroundTint="@color/colorfillSignIn"
+                        android:ems="10"
+                        android:hint="@string/enterpass"
+                        android:inputType="textPassword"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@color/colorfillSignIn"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints" />
+
+
+                    <EditText
+                        android:id="@+id/editTextEnterNewPass"
+                        android:layout_width="318dp"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="16dp"
+                        android:autofillHints=""
+                        android:backgroundTint="@color/colorfillSignIn"
+                        android:ems="10"
+                        android:hint="@string/enternewpass"
+                        android:inputType="textPassword"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@color/colorfillSignIn"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/editTextEnterPass"
+                        tools:ignore="MissingConstraints" />
+
+
+                    <EditText
+                        android:id="@+id/editTextconfirmnewpass"
+                        android:layout_width="318dp"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="16dp"
+                        android:autofillHints=""
+                        android:backgroundTint="@color/colorfillSignIn"
+                        android:ems="10"
+                        android:hint="@string/confirmPassword"
+                        android:inputType="textPassword"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@color/colorfillSignIn"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/editTextEnterNewPass"
+                        tools:ignore="MissingConstraints"
+                        tools:targetApi="lollipop" />
+
+                    <Button
+                        android:id="@+id/buttonconfirm"
+                        android:layout_width="158dp"
+                        android:layout_height="45dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="32dp"
+                        android:background="@color/colorsignIn"
+                        android:text="@string/changePassword"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </FrameLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_navigation"
+        android:background="?android:attr/windowBackground"/>
+
+
+</RelativeLayout>
