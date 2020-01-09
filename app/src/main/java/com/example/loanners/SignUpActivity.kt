@@ -29,7 +29,6 @@ class SignUpActivity : AppCompatActivity() {
         val username = editTextUserName.text.toString()
         val password = editTextPassword.text.toString()
         val confirmPassword = editTextconfirmPassword.text.toString()
-        val type = spinnerUserType.selectedItem.toString()
 
         if(username == "" || email == "" ){
             Toast.makeText(this,"Form shouldn't left blank.",Toast.LENGTH_SHORT).show()
@@ -41,16 +40,17 @@ class SignUpActivity : AppCompatActivity() {
             Toast.makeText(this,"Those password didn't match. Try again.",Toast.LENGTH_SHORT).show()
         }
         else{
-            val user = User(email,password,username,type,null, null, null, null,null, null)
-            createUser(user)
+            val student = Student(email,password,username,null,null, null, null, null,null, null,null,0.0,0,0)
+            createUser(student)
         }
     }
 
-    private fun createUser(user: User) {
-        val url = getString(R.string.url_server) + getString(R.string.url_user_create) + "?username=" + user.username +
-                "&password=" + user.password + "&email=" + user.email + "&role=" + user.role + "&name=" + user.name +
-                "&ic_number=" + user.icNumber + "&gender=" + user.gender + "&phone_no=" + user.phoneNo + "&address=" +
-                user.address + "&education=" + user.education
+    private fun createUser(student:Student) {
+        val url = getString(R.string.url_server) + getString(R.string.url_student)+getString(R.string.url_create) + "?username=" + student.username +
+                "&password=" + student.password + "&student_email=" + student.email + "&student_image=" + student.image + "&student_name=" + student.name +
+                "&student_ic_no=" + student.icNumber + "&student_gender=" + student.gender + "&student_phone=" + student.phoneNo + "&student_address=" +
+                student.address +"&student_education=" + student.education+"&student_bank_account=" + student.bankAccount+"&student_cgpa=" + student.cgpa+"&student_verify_status=" +
+                student.verify_status+"&student_loan_status=" + student.loanStatus
 
         val jsonObjectRequest = JsonObjectRequest(
                 Request.Method.GET, url, null,
@@ -64,7 +64,7 @@ class SignUpActivity : AppCompatActivity() {
 
                             if(success.equals("1")){
                                 val intent = Intent(this,DetailsActivity::class.java)
-                                intent.putExtra("EXTRA_EMAIL",user.email)
+                                intent.putExtra("EXTRA_EMAIL",student.email)
                                 startActivity(intent)
                             }else{
                                 Toast.makeText(applicationContext, "Record not saved", Toast.LENGTH_LONG).show()

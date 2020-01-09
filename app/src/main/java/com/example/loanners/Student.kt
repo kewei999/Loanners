@@ -14,4 +14,8 @@ data class Student(@PrimaryKey val email: String,
                    val gender: String?,
                    val phoneNo:Long?,
                    val address: String?,
-                   val education: String?)
+                   val education: String?,
+                    val bankAccount:String?,
+                   val cgpa:Double,
+                   val verify_status:Int,
+                  val loanStatus:Int)

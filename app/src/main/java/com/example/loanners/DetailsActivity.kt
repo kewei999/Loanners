@@ -60,13 +60,13 @@ class DetailsActivity : AppCompatActivity() {
             Toast.makeText(this,"Phone number didn't match format.",Toast.LENGTH_SHORT).show()
         }
         else {
-            student = Student(student.email, student.password, student.username, null, fullName, icNumber.toLong(), gender, phoneNumber.toLong(), address, education)
+            student = Student(student.email, student.password, student.username, null, fullName, icNumber.toLong(), gender, phoneNumber.toLong(), address, education,null,0.00,0,0)
             updateUser(student)
         }
     }
 
     private fun updateUser(student: Student) {
-        val url = getString(R.string.url_server) + getString(R.string.url_user_update) + "?username=" + student.username +
+        val url = getString(R.string.url_server) + getString(R.string.url_student)+getString(R.string.url_update) + "?username=" + student.username +
                 "&password=" + student.password + "&student_email=" + student.email + "&student_image=" + student.image + "&student_name=" + student.name +
                 "&student_ic_no=" + student.icNumber + "&student_gender=" + student.gender + "&student_phone=" + student.phoneNo + "&student_address=" +
                 student.address +"&student_education=" + student.education
@@ -105,7 +105,7 @@ class DetailsActivity : AppCompatActivity() {
     }
 
     private fun readByEmail(email:String) {
-        val url = getString(R.string.url_server) + getString(R.string.url_user_read_by_email) + "?student_email=" + email
+        val url = getString(R.string.url_server) + getString(R.string.url_student)+ getString(R.string.url_read_by_email) + "?student_email=" + email
 
         // output = (TextView) findViewById(R.id.jsonData);
         val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
@@ -118,7 +118,7 @@ class DetailsActivity : AppCompatActivity() {
                         if(jsonResponse != null){
                             student = Student(jsonResponse.getString("email"),jsonResponse.getString("password"),
                                 jsonResponse.getString("username"),null,null,null,
-                                null,null,null,null)
+                                null,null,null,null,null,0.00,0,0)
                         }
                     }
                 } catch (e: JSONException) {

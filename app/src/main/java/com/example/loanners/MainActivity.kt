@@ -12,6 +12,8 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.editTextPassword
+import kotlinx.android.synthetic.main.activity_main.editTextUserName
 import kotlinx.android.synthetic.main.activity_sign_up.*
 import org.json.JSONException
 import org.json.JSONObject
@@ -26,26 +28,32 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        //editTextPassword.transformationMethod = PasswordTransformationMethod()
+        editTextPassword.transformationMethod = PasswordTransformationMethod()
 
         loginPreferences = getSharedPreferences("loginPref", Context.MODE_PRIVATE)
         loginPreferencesEditor = loginPreferences.edit()
 
+        if(loginPreferences.contains("username") && loginPreferences.contains("password") && radioButtonRememberMe.isChecked == true){
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         saveLogin = loginPreferences.getBoolean("saveLogin",false)
         if (saveLogin) {
-          //  editTextUserName.setText(loginPreferences.getString("username", ""))
-           // editTextPassword.setText(loginPreferences.getString("password", ""))
+            editTextUserName.setText(loginPreferences.getString("username", ""))
+            editTextPassword.setText(loginPreferences.getString("password", ""))
             radioButtonRememberMe.isChecked = true
         }
+
         buttonSignUp.setOnClickListener {
             callRegister()
         }
 
         buttonSignIn.setOnClickListener {
-            //val username = editTextUserName.text.toString()
-            //val password = editTextPassword.text.toString()
-            //readOne(username,password)
-            call()
+            val username = editTextUserName.text.toString()
+            val password = editTextPassword.text.toString()
+            readOne(username,password)
         }
     }
 
@@ -60,7 +68,7 @@ private fun call(){
 }
 
     private fun readOne(username:String,password:String) {
-        val loginURL = getString(R.string.url_server) + getString(R.string.url_user_read_one) + "?username=" + username + "&password=" + password
+        val loginURL = getString(R.string.url_server) + getString(R.string.url_student)+ getString(R.string.url_read_one) + "?username=" + username + "&password=" + password
 
         // output = (TextView) findViewById(R.id.jsonData);
         val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, loginURL, null,
@@ -69,18 +77,21 @@ private fun call(){
                     if (response != null) {
                         val strResponse = response.toString()
                         val jsonResponse  = JSONObject(strResponse)
-                        val studentName = jsonResponse.getJSONObject("student").getString("student_name")
-
+                       val studentName = jsonResponse.getString("student_name")
+                        val studentEmail = jsonResponse.getString("student_email")
+                       // val verifyStatus=jsonResponse.getInt("student_verify_status")
                         Toast.makeText(this, "Log in successful", Toast.LENGTH_SHORT).show()
                         val intent = Intent(this, HomeActivity::class.java)
+
+                        loginPreferencesEditor.putString("username", username)
+                        loginPreferencesEditor.putString("password", password)
+                        loginPreferencesEditor.putString("email",studentEmail)
+                        loginPreferencesEditor.putString("studentName",studentName)
+                        //loginPreferencesEditor.putInt("verifyStatus",verifyStatus)
+                        loginPreferencesEditor.commit()
+
                         if (radioButtonRememberMe.isChecked) {
                             loginPreferencesEditor.putBoolean("saveLogin", true)
-                            loginPreferencesEditor.putString("username", username)
-                            loginPreferencesEditor.putString("password", password)
-                            loginPreferencesEditor.putString("student_name",studentName)
-                            loginPreferencesEditor.commit()
-                        } else {
-                            loginPreferencesEditor.clear()
                             loginPreferencesEditor.commit()
                         }
                         startActivity(intent)
@@ -99,5 +110,4 @@ private fun call(){
         // Access the RequestQueue through your singleton class.
         MySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest)
     }
-
 }

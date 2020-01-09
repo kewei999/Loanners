@@ -38,7 +38,7 @@ class ChangePassFragment : Fragment() {
         val currentPass=view.findViewById(R.id.editTextEnterPass)as EditText
         val newpass=view.findViewById(R.id.editTextEnterNewPass)as EditText
         val confirmnewpass=view.findViewById(R.id.editTextconfirmnewpass)as EditText
-        prefs = getActivity()?.getSharedPreferences("User", Context.MODE_PRIVATE)
+        prefs = getActivity()?.getSharedPreferences("loginPref", Context.MODE_PRIVATE)
         val username=prefs?.getString("username","DEFAULT")
         val password=prefs?.getString("password","DEFAULT")
 

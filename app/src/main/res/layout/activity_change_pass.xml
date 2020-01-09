@@ -37,7 +37,7 @@
                 android:layout_marginRight="8dp"
                 android:background="@color/colorBackgroundProfileD"
                 android:drawableBottom="@drawable/ic_keyboard_arrow_left_green_48dp"
-                app:layout_constraintEnd_toStartOf="@+id/textViewChgPass"
+                app:layout_constraintEnd_toStartOf="@+id/textViewVerify"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

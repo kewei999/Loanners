@@ -1,6 +1,7 @@
 package com.example.loanners
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
@@ -25,7 +26,8 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class ProfileFragment : Fragment() {
-    var prefs: SharedPreferences? = null
+    lateinit var loginPreferences: SharedPreferences
+    lateinit var loginPreferencesEditor: SharedPreferences.Editor
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,10 +39,12 @@ class ProfileFragment : Fragment() {
         val btnBanAcc = view.findViewById(R.id.buttonBankAcc) as Button
         val userName=view.findViewById(R.id.textViewuserName)as TextView
         val btnMangeAcc = view.findViewById(R.id.buttonManageAcc)as Button
-        prefs = getActivity()?.getSharedPreferences("User", Context.MODE_PRIVATE)
-        val studentName=prefs?.getString("student_name","DEFAULT")
+        val btnSignOut=view.findViewById(R.id.buttonSignOut)as Button
+        val pref = activity!!.getSharedPreferences("loginPref", Context.MODE_PRIVATE)
+            var username = pref.getString("studentName",null)
+        loginPreferencesEditor = pref.edit()
 
-        userName.setText(studentName)
+        userName.text=username
 
         btnProfile.setOnClickListener {
             val fr = fragmentManager!!.beginTransaction()
@@ -63,6 +67,13 @@ class ProfileFragment : Fragment() {
             fr.commit()
         }
 
+        btnSignOut.setOnClickListener{
+            loginPreferencesEditor.clear()
+            loginPreferencesEditor.commit()
+            val intent = Intent(activity, MainActivity::class.java)
+            startActivity(intent)
+
+        }
         return view
     }
 }

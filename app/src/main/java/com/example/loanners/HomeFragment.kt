@@ -55,7 +55,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun syncMostLoaner(view: View){
-        val url = getString(R.string.url_server) + getString(R.string.url_loaner_read_most)
+        val url = getString(R.string.url_server) + getString(R.string.url_loan)+getString(R.string.url_read_latest)
 
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET, url, null,
@@ -106,7 +106,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun syncLatestLoaner(view: View) {
-        val url = getString(R.string.url_server) + getString(R.string.url_loaner_read_latest)
+        val url = getString(R.string.url_server) + getString(R.string.url_loan)+getString(R.string.url_read_latest)
 
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET, url, null,

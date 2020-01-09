@@ -193,6 +193,16 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/RecyclerViewSem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/guideline"
+                        tools:listitem="@layout/semester_detail">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <de.hdodenhof.circleimageview.CircleImageView

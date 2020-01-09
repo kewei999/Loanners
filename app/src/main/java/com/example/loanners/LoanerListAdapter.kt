@@ -1,15 +1,20 @@
 package com.example.loanners
 
 import android.content.Context
+import android.content.SharedPreferences
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import androidx.appcompat.app.AppCompatActivity
+
+
 
 class LoanerListAdapter internal constructor(context: Context) : RecyclerView.Adapter<LoanerListAdapter.LoanerViewHolder>() {
-
+    var selectedPosition = -1
     private var inflater: LayoutInflater = LayoutInflater.from(context)
     private var loaners = emptyList<Loaner>() // Cached copy of user
 
@@ -31,11 +36,33 @@ class LoanerListAdapter internal constructor(context: Context) : RecyclerView.Ad
     }
 
     override fun onBindViewHolder(holder: LoanerViewHolder, position: Int) {
-        val current = loaners[position]
+        lateinit var loginPreferences: SharedPreferences
+        lateinit var loginPreferencesEditor: SharedPreferences.Editor
+
+
+         val current = loaners[position]
+        var loanID=current.loanID
         holder.imageView.setImageResource(current.image)
         holder.textViewName.text = current.loanName
         holder.textViewDate.text = current.announceDate
         holder.textViewDetails.text = current.loanDetails
+
+        if(selectedPosition == position){
+            holder.itemView.setBackgroundColor(Color.parseColor("#000000"))
+            loginPreferencesEditor.putString("loanID",loanID)
+
+        }
+
+        holder.itemView.setOnClickListener {
+            selectedPosition = position
+            notifyDataSetChanged()
+        }
+
+    }
+
+    internal fun setLoaners(loaners: List<Loaner>) {
+        this.loaners = loaners
+        notifyDataSetChanged()
     }
 
     override fun getItemCount() = loaners.size

@@ -32,16 +32,21 @@
         <item>Guardian</item>
     </string-array>
     <string name="url_server">https://noideamobile.000webhostapp.com/api/</string>
-    <string name="url_user_search">student/search.php</string>
-    <string name="url_user_update">student/update.php</string>
-    <string name="url_user_delete">student/delete.php</string>
-    <string name="url_user_read_one">student/read_one.php</string>
-    <string name="url_user_read_by_email">student/read_by_email.php</string>
-    <string name="url_user_read">student/read.php</string>
-    <string name="url_user_create">student/create.php</string>
-    <string name="url_loaner_read">loan/read.php</string>
-    <string name="url_loaner_read_latest">loan/read_latest.php</string>
-    <string name="url_loaner_read_most">loan/read_most.php</string>
+    <string name="url_student">student</string>
+    <string name="url_loan">loan</string>
+    <string name="url_approval_loan">approval_loan</string>
+    <string name="url_company">company</string>
+    <string name="url_semester">semester</string>
+    <string name="url_search">/search.php</string>
+    <string name="url_update">/update.php</string>
+    <string name="url_delete">/delete.php</string>
+    <string name="url_read_one">/read_one.php</string>
+    <string name="url_read_by_email">/read_by_email.php</string>
+    <string name="url_read">/read.php</string>
+    <string name="url_create">/create.php</string>
+    <string name="url_read_latest">/read_latest.php</string>
+    <string name="url_read_most">/read_most.php</string>
+    <string name="url_changePass">/changePassword.php</string>
 
     <string name="home">Home</string>
     <string name="title_activity_real_home">RealHomeActivity</string>
@@ -73,4 +78,20 @@
     <string name="enterpass">Enter Current Password</string>
     <string name="enternewpass">Enter New Password</string>
     <string name="defaultLoan">-</string>
+    <string name="semester">Semester</string>
+    <string name="date">Date</string>
+    <string name="amount">Amount</string>
+    <string name="description">Description</string>
+    <string name="loanD">Loan Detail</string>
+    <string name="signOut">Sign Out</string>
+    <string name="permission_denied">Permission denied</string>
+    <string name="image_view_stroke_take_picture">image view stroke take picture</string>
+    <string name="image_view_solid_take_picture">image view solid take picture</string>
+    <string name="image_view_take_picture">image view take picture</string>
+    <string name="image_view_item_photo">image view item photo</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ApplyInfo">Apply Information</string>
+    <string name="uploadfile">Upload file by</string>
 </resources>

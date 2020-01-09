@@ -1,5 +1,7 @@
 package com.example.loanners
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -19,6 +21,8 @@ import org.json.JSONObject
 
 
 class HomeActivity: AppCompatActivity(){
+
+
     lateinit var latestLoanerList: ArrayList<Loaner>
     lateinit var mostLoanerList: ArrayList<Loaner>
     lateinit var mostAdapter: LoanerListAdapter
@@ -34,6 +38,7 @@ class HomeActivity: AppCompatActivity(){
 
             R.id.nav_loan -> {
                 textViewHome.text=""
+
                 replaceFragment(LoanFragment())
                 return@OnNavigationItemSelectedListener true
             }
@@ -63,7 +68,8 @@ class HomeActivity: AppCompatActivity(){
         latestLoanerList = ArrayList()
         latestAdapter = LoanerListAdapter(this,latestLoanerList)
 
-       syncMostLoaner()
+
+        syncMostLoaner()
         syncLatestLoaner()
 
         bottom_navigation.setOnNavigationItemSelectedListener(monNavigationItemSelectedListener)
@@ -77,7 +83,7 @@ class HomeActivity: AppCompatActivity(){
     }
 
     private fun syncMostLoaner(){
-        val url = getString(R.string.url_server) + getString(R.string.url_loaner_read_most)
+        val url = getString(R.string.url_server) + getString(R.string.url_loan)+getString(R.string.url_read_most)
 
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET, url, null,
@@ -128,7 +134,7 @@ class HomeActivity: AppCompatActivity(){
     }
 
     private fun syncLatestLoaner() {
-        val url = getString(R.string.url_server) + getString(R.string.url_loaner_read_latest)
+        val url = getString(R.string.url_server) + getString(R.string.url_loan)+getString(R.string.url_read_latest)
 
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET, url, null,
