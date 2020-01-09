@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.DefaultRetryPolicy
@@ -79,6 +80,7 @@ class ListFragment : Fragment() {
                         val listRecyclerView = view.findViewById<RecyclerView>(R.id.listRecycleView)
                         listRecyclerView.adapter = adapter
                         listRecyclerView.layoutManager = LinearLayoutManager(view.context,LinearLayoutManager.VERTICAL, false)
+
 
                         }
                 }catch (e:Exception){
